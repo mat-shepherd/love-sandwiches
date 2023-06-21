@@ -124,7 +124,6 @@ def get_stock_values(data):
     user
     """
     headings = SHEET.worksheet("stock").get_all_values()[0]
-    print(headings)
     stock_dict = {k: v for k, v in zip(headings, data)}
 
     return stock_dict
