@@ -118,10 +118,14 @@ def calculate_stock_data(data):
 
 
 def get_stock_values(data):
-    stock = SHEET.worksheet("stock").get_all_values()
-    heading = stock[0]
-
-    stock_dict = {k: v for k, v in zip(heading, data)}
+    """
+    Get caluclated stock values and combine values with 
+    corresponding sandwich name headings to retrun to 
+    user
+    """
+    headings = SHEET.worksheet("stock").get_all_values()[0]
+    print(headings)
+    stock_dict = {k: v for k, v in zip(headings, data)}
 
     return stock_dict
 
